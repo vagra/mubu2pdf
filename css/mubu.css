@@ -1,0 +1,276 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 50px 20px;
+  padding: 0;
+  color: #333;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "PingFang SC", Helvetica, Arial, "Microsoft YaHei", 微软雅黑, 黑体, Heiti,
+    sans-serif, SimSun, 宋体, serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body.narrow {
+  max-width: 790px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.title {
+  min-height: 40px;
+  padding-left: 10px;
+  padding-bottom: 24px;
+  margin-bottom: 20px;
+  line-height: 40px;
+  font-size: 26px;
+  font-weight: 500;
+  border-bottom: 1px solid #e5e6e8;
+}
+
+.node-list {
+  margin: 0 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.node {
+  position: relative;
+}
+
+.node.drill-node > .content {
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.node.drill-node > .note {
+  margin-bottom: 10px;
+}
+
+.content {
+  min-height: 24px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.note {
+  position: relative;
+  padding-bottom: 2px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #888;
+  white-space: pre-wrap;
+}
+
+.content > *,
+.note > * {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.note:empty {
+  padding-bottom: 0;
+}
+
+.node.finished .content,
+.node.finished .note {
+  opacity: 0.5;
+}
+
+.node.finished > .content {
+  text-decoration: line-through;
+}
+
+.mention {
+  padding-left: 2px;
+  padding-right: 2px;
+  color: #3370ff;
+  word-break: break-all;
+  text-decoration: none;
+}
+
+.content-link {
+  color: unset;
+  opacity: 0.6;
+  word-break: break-all;
+}
+
+.tag {
+  text-decoration: underline;
+  opacity: 0.6;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.content .highlight-red,
+.highlight-red > .content > * {
+  background-color: #fbbfbc;
+}
+
+.content .highlight-yellow,
+.highlight-yellow > .content > * {
+  background-color: #f8e6ab;
+}
+
+.content .highlight-blue,
+.highlight-blue > .content > * {
+  background-color: #bacefd;
+}
+
+.content .highlight-cyan,
+.highlight-cyan > .content > * {
+  background-color: #a9efe6;
+}
+
+.content .highlight-pink,
+.highlight-pink > .content > * {
+  background-color: #fdddef;
+}
+
+.content .highlight-olive,
+.highlight-olive > .content > * {
+  background-color: #bbbfc4;
+}
+
+.content .highlight-grey,
+.highlight-grey > .content > * {
+  background-color: #bbbfc4;
+}
+
+.text-color-red {
+  color: #dc2d1e;
+}
+
+.text-color-yellow {
+  color: #ffaf38;
+}
+
+.text-color-green {
+  color: #75c940;
+}
+
+.text-color-blue {
+  color: #3da8f5;
+}
+
+.text-color-purple {
+  color: #797ec9;
+}
+
+.bullet {
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+}
+
+.node.collapsed > .bullet {
+  background-color: #dee0e3;
+}
+
+.bullet-dot {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  background-color: rgb(100, 106, 115);
+  border-radius: 3px;
+}
+
+.image-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.image-item {
+  padding-top: 2px;
+  padding-bottom: 8px;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+}
+
+.children {
+  position: relative;
+}
+
+.note::before,
+.image-list::before,
+.children::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -17px;
+  width: 1px;
+  height: 100%;
+  background-color: #dee0e3;
+}
+
+.node.drill-node > .note::before,
+.node.drill-node > .image-list::before,
+.node.drill-node > .children::before,
+body.noline .note::before,
+body.noline .image-list::before,
+body.noline .children::before {
+  display: none;
+}
+
+.node.drill-node > .note,
+.node.drill-node > .content,
+.node.drill-node > .image-list,
+.node.drill-node > .children {
+  margin-left: 10px;
+}
+
+body.noline .node-list {
+  margin-right: 20px;
+}
+
+.publish {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+.publish-link {
+  color: #4694ff;
+}
+
+@media print {
+  body {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@page {
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  margin-top: 0.5in;
+  margin-bottom: 0.5in;
+}
