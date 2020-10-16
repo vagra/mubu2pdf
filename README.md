@@ -10,6 +10,14 @@ Convert mubu.com outline html to pdf, with up to 108 heading levels.
 
 推荐使用 PDF-XChange Viewer 来阅读生成的 PDF ，它可以支持无限级的标题。
 
+## 示例文件
+mubu, html, pdf 三个目录下带了几个示例文件，大家可以看效果。
+```
+mubu/   # 幕布导出的原始 html 文件
+html/   # 转换生成的判定了各级标题和正文的 html 文件
+pdf/    # 最终生成的 pdf 文件
+```
+
 ## 安装
 
 这个工具主要使用了两个 Python 库，需要使用 pip 预先安装：
