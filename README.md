@@ -18,7 +18,7 @@ Convert mubu.com outline html to pdf, with up to 108 heading levels.
 
 2. [weasyprint](https://github.com/Kozea/WeasyPrint)
 
-特别是 weasyprint 这个库安装比较麻烦，请自己去官网搜索安装文档。
+特别是 weasyprint 这个库安装比较麻烦，请自己去官网搜索 [安装文档](https://weasyprint.readthedocs.io/en/stable/install.html) 。
 
 ## 使用方法
 
