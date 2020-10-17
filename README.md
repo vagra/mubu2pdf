@@ -99,7 +99,7 @@ python -m pip install WeasyPrint
 python -m pip install cssselect
 ```
 
-6. 好了，现在关闭命令行窗口，再重新打开，就可以执行如下指令来转换 html 为 pdf 文档了：
+6. 好了，现在关闭命令行窗口（以更新环境），再重新打开，就可以执行如下指令来转换 html 为 pdf 文档了：
 ```
 weasyprint html路径.html 输出pdf路径.pdf
 ```
