@@ -30,7 +30,7 @@ MUST_BOLD = False
 MUST_DIGITAL = True
 MUST_STEM = False
 
-DIGITALS = '零〇一二三四五六七八九十百0123456789'
+DIGITALS = '零〇一二三四五六七八九十百壹贰叁肆伍陆柒捌玖拾佰0123456789'
 STEMS = '甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥'
 
 IGNORED_CLASSES = ['bullet', 'bullet-dot']
