@@ -27,6 +27,7 @@ pdf/    # 最终生成的 pdf 文件
 2. [weasyprint](https://github.com/Kozea/WeasyPrint)
 
 特别是 weasyprint 这个库安装比较麻烦，请自己去官网搜索 [安装文档](https://weasyprint.readthedocs.io/en/stable/install.html) 。
+我自己简单写了个 weasyprint 在 Windows 上的的安装过程在本文最后，可参看。
 
 ## 使用方法
 
@@ -65,6 +66,42 @@ parse_html.py 中有上面四个设置，是可以自己随意修改的。
 
 ## 如何修改字体、行距、PDF 设置边距、页码等等？
 这个，只要修改 css/ 目录下的两个 css 文件，你可以为所欲为。
+
+## weasyprint 安装过程
+
+1. 首先看看你的 python 的版本是 32 位还是 64 位的：
+```
+python --version --version
+```
+这个教程只针对 64 位 Windows 。
+
+2. 到这里下载 gtk3-runtime-x.x.x-x-x-x-ts-win64.exe
+https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases
+下载后安装，一路 Next 即可。
+
+然后打开命令行窗口执行如下步骤：
+
+3. 执行如下指令升级你的 pip ：
+```
+python -m pip install --upgrade pip setuptools
+```
+
+4. 执行如下指令以安装 weasyprint ：
+```
+python -m pip install WeasyPrint
+```
+它会自动安装各项依赖库。
+
+5. 但是它忘了安装 cssselect ，所以要手动安装：
+```
+python -m pip install cssselect
+```
+
+6. 好了，现在关闭命令行窗口，再重新打开，就可以执行如下指令来转换 html 为 pdf 文档了：
+```
+weasyprint html路径.html 输出pdf路径.pdf
+```
+这个能正常执行的话，就是安装成功了。
 
 ## 特别鸣谢
 
