@@ -93,12 +93,17 @@ https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releas
 
 然后打开命令行窗口执行如下步骤：
 
-4. 执行如下指令升级你的 pip ：
+4. 执行如下指令升级你的 pip：
 ```
 python -m pip install --upgrade pip setuptools
 ```
 
-5. 执行如下指令以安装 weasyprint ：
+5. 执行如下指令以安装 lxml：
+```
+python -m pip install lxml 
+```
+
+5. 执行如下指令以安装 weasyprint：
 ```
 python -m pip install WeasyPrint
 ```
