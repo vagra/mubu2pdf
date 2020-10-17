@@ -8,7 +8,7 @@ Convert mubu.com outline html to pdf, with up to 108 heading levels.
 
 ![PDF 阅读效果](https://github.com/vagra/mubu2pdf/raw/main/images/pdf.jpg)
 
-推荐使用 PDF-XChange Viewer 来阅读生成的 PDF ，它可以支持无限级的标题。
+推荐使用 [PDF-XChange Viewer](https://www.tracker-software.com/product/pdf-xchange-viewer) 来阅读生成的 PDF ，它的书签栏可以支持无限级的标题，体验很不错，而且免费。
 
 ## 示例文件
 本工具实际上就一个 parse_html.py ，和 css 目录下两个 css 文件，其它的都是文档和示例文件。
