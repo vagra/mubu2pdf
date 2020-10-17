@@ -70,16 +70,22 @@ parse_html.py 中有上面四个设置，是可以自己随意修改的。
 
 ## weasyprint 安装过程
 
-1. 首先看看你的 python 的版本是 32 位还是 64 位的：
-```
-python --version --version
-```
 这个教程只针对 64 位 Windows ，而且要安装 64 位的 python 3.x 。
-没有 Python 的话到这里下载 Windows x86-64 executable installer 然后安装：
+其它系统可以参看官方文档。
+
+1. 没有 Python 的话到这里下载 Windows x86-64 executable installer ：
 
 https://www.python.org/downloads/windows/
 
-2. 到这里下载 gtk3-runtime-x.x.x-x-x-x-ts-win64.exe ：
+如果你的系统只是 64 位 Windows 7 ，你只能下载 Python 3.8.x 以下的版本， Python 3.9 以上不支持 Windows 7 。
+下载后安装，安装过程中注意勾选`把 Python 加入系统变量`，它默认就是选中的。
+
+2. 装好后，看看你的 python 的版本是 32 位还是 64 位的：
+```
+python --version --version
+```
+
+3. 到这里下载 gtk3-runtime-x.x.x-x-x-x-ts-win64.exe ：
 
 https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases
 
@@ -87,23 +93,23 @@ https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releas
 
 然后打开命令行窗口执行如下步骤：
 
-3. 执行如下指令升级你的 pip ：
+4. 执行如下指令升级你的 pip ：
 ```
 python -m pip install --upgrade pip setuptools
 ```
 
-4. 执行如下指令以安装 weasyprint ：
+5. 执行如下指令以安装 weasyprint ：
 ```
 python -m pip install WeasyPrint
 ```
 它会自动安装各项依赖库。
 
-5. 但是它忘了安装 cssselect ，所以要手动安装：
+6. 但是它忘了安装 cssselect ，所以要手动安装：
 ```
 python -m pip install cssselect
 ```
 
-6. 好了，现在关闭命令行窗口（以更新环境），再重新打开，就可以执行如下指令来转换 html 为 pdf 文档了：
+7. 好了，现在关闭命令行窗口（以更新环境变量），再重新打开，就可以执行如下指令来转换 html 为 pdf 文档了：
 ```
 weasyprint html路径.html 输出pdf路径.pdf
 ```
