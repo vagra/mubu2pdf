@@ -6,7 +6,7 @@ Convert mubu.com outline html to pdf, with up to 108 heading levels.
 
 这不是一般的 PDF 文档，而是支持多达 108 级标题的 PDF 文档。
 
-![PDF 阅读效果](images/pdf.jpg)
+![PDF 阅读效果](https://github.com/vagra/mubu2pdf/raw/main/images/pdf.jpg)
 
 推荐使用 PDF-XChange Viewer 来阅读生成的 PDF ，它可以支持无限级的标题。
 
