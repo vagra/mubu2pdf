@@ -75,6 +75,9 @@ parse_html.py 中有上面四个设置，是可以自己随意修改的。
 python --version --version
 ```
 这个教程只针对 64 位 Windows ，而且要安装 64 位的 python 3.x 。
+没有 Python 的话到这里下载 Windows x86-64 executable installer 然后安装：
+
+https://www.python.org/downloads/windows/
 
 2. 到这里下载 gtk3-runtime-x.x.x-x-x-x-ts-win64.exe ：
 
