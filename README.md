@@ -93,28 +93,33 @@ https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releas
 
 然后打开命令行窗口执行如下步骤：
 
-4. 执行如下指令升级你的 pip：
+4. pip 默认的国外镜像速度太慢，执行如下指令设置 pip 使用清华大学镜像：
+```
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+5. 执行如下指令升级你的 pip：
 ```
 python -m pip install --upgrade pip setuptools
 ```
 
-5. 执行如下指令以安装 lxml：
+6. 执行如下指令以安装 lxml：
 ```
 python -m pip install lxml 
 ```
 
-5. 执行如下指令以安装 weasyprint：
+7. 执行如下指令以安装 weasyprint：
 ```
 python -m pip install WeasyPrint
 ```
 它会自动安装各项依赖库。
 
-6. 但是它忘了安装 cssselect ，所以要手动安装：
+8. 但是它忘了安装 cssselect ，所以要手动安装：
 ```
 python -m pip install cssselect
 ```
 
-7. 好了，现在关闭命令行窗口（以更新环境变量），再重新打开，就可以执行如下指令来转换 html 为 pdf 文档了：
+9. 好了，现在关闭命令行窗口（以更新环境变量），再重新打开，就可以执行如下指令来转换 html 为 pdf 文档了：
 ```
 weasyprint html路径.html 输出pdf路径.pdf
 ```
