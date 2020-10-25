@@ -30,7 +30,7 @@ MUST_BOLD = False
 MUST_DIGITAL = True
 MUST_STEM = False
 
-DIGITALS = '零〇一二三四五六七八九十百壹贰叁肆伍陆柒捌玖拾佰0123456789'
+DIGITALS = '零〇一二三四五六七八九十百壹贰叁肆伍陆柒捌玖拾佰0123456789①②③④⑤⑥⑦⑧⑨⑩'
 STEMS = '甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥'
 
 IGNORED_CLASSES = ['bullet', 'bullet-dot']
@@ -89,7 +89,7 @@ def parse(path: str):
         print('no "/html/body/ul" node.')
         return
 
-    # travelNode(ul)
+    travelNode(ul)
     travelHead(ul)
 
     htmlFile.write('</body>\n</html>\n')
@@ -108,7 +108,7 @@ def travelNode(node: Element):
     node.cleanBullet()
     node.cleanAttrs()
 
-    print(leading, node.tag, node.attrib)
+    # print(leading, node.tag, node.attrib)
 
     level += 1
     leading += ' '
@@ -145,13 +145,13 @@ def travelHead(ul: Element):
         isHeading = checkHeading(li, span)
 
         if isHeading:
-            print(f'{hLeading}<h{hLevel}>{inner(span)}</h{hLevel}>')
-            htmlFile.write(f'{hLeading}<h{hLevel}>{inner(span)}</h{hLevel}>\n')
+            print(f'{hLeading}<h{hLevel}>{inner(content)}</h{hLevel}>')
+            htmlFile.write(f'{hLeading}<h{hLevel}>{inner(content)}</h{hLevel}>\n')
 
             notes = li.xpath('div[contains(@class, "note")]')
             if len(notes) > 0:
                 note = notes[0]
-                htmlFile.write(f'{hLeading}{inner(note)}\n')
+                htmlFile.write(f'{hLeading}{outer(note)}\n')
 
             childrens = li.xpath('div[contains(@class, "children")]')
             if len(childrens) > 0:
@@ -166,26 +166,39 @@ def travelHead(ul: Element):
                     hLeading = hLeading[:-2]
 
         else:
-            htmlFile.write(f'{hLeading}{inner(content)}\n')
+            htmlFile.write(f'{hLeading}{outer(content)}\n')
 
             notes = li.xpath('div[contains(@class, "note")]')
             if len(notes) > 0:
                 note = notes[0]
 
-                htmlFile.write(f'{hLeading}{inner(note)}\n')
+                htmlFile.write(f'{hLeading}{outer(note)}\n')
 
             childrens = li.xpath('div[contains(@class, "children")]')
             if len(childrens) > 0:
                 children = childrens[0]
 
-                htmlFile.write(f'{hLeading}{inner(children)}\n')
+                htmlFile.write(f'{hLeading}{outer(children)}\n')
 
 
 def inner(node: Element) -> str:
+
     if node is None:
         return ''
 
-    return tostring(node, encoding='unicode')
+    inner = ''
+    for child in node:
+        inner += tostring(child, encoding='unicode').strip()
+
+    return inner
+
+
+def outer(node: Element) -> str:
+
+    if node is None:
+        return ''
+
+    return tostring(node, encoding='unicode').strip()
 
 
 def bindMethods(node: Element):
@@ -194,9 +207,9 @@ def bindMethods(node: Element):
 
 
 def cleanBullet(self: Element):
-    bullet = self.find('div.bullet')
+    bullets = self.xpath("div[contains(@class, 'bullet')]")
 
-    if bullet:
+    for bullet in bullets:
         self.remove(bullet)
 
 
